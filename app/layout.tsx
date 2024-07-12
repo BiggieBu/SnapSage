@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Kadwa } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const kadwa = Kadwa({
   subsets: ["latin"],
@@ -20,10 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn("font-kadwa antialiased", kadwa.variable)}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={cn("font-kadwa antialiased", kadwa.variable)}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
