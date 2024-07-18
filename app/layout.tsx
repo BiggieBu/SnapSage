@@ -3,6 +3,7 @@ import { Kadwa } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ClerkProvider } from "@clerk/nextjs";
+import { dark, neobrutalism } from "@clerk/themes";
 
 const kadwa = Kadwa({
   subsets: ["latin"],
@@ -21,7 +22,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+        baseTheme: [neobrutalism],
+        variables: {
+          colorPrimary: "#f7b801"
+        },
+        elements: {
+          logoImage: "w-1/2 h-auto",
+        }
+      }
+      }
+    >
       <html lang="en">
         <body className={cn("font-kadwa antialiased", kadwa.variable)}>
           {children}
