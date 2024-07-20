@@ -1,15 +1,15 @@
-import { model, models, Schema } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema({
     clerkId: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     username: {
         type: String,
@@ -17,24 +17,25 @@ const UserSchema = new Schema({
         unique: true,
     },
     photo: {
-        type: URL,
+        type: String,
         required: true,
     },
     firstName: {
-        type: String
+        type: String,
     },
     lastName: {
-        type: String
+        type: String,
     },
     planId: {
         type: Number,
-        default: 1
+        default: 1,
     },
     creditBalance: {
         type: Number,
         default: 10,
-    }
-})
+    },
+});
 
-const User = models?.User || model("User", UserSchema)
+const User = models?.User || model("User", UserSchema);
+
 export default User;

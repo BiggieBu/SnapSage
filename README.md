@@ -9,3 +9,7 @@ I changed the types of firstname and lastname in CreateUserParams and UpdateUser
 
 npm install @clerk/backend
 Instantised a clerkClient instance with createClerkCLient function
+
+## Mongoose has no type such as URL
+
+changed URL to string
