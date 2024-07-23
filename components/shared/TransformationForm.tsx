@@ -104,10 +104,26 @@ const TransformationForm = ({ data = null, action, userId, type, creditBalance }
 
                         )} />
                 }
+                {(type === 'remove' || type === 'recolor') && (
+                    <div className="prompt-field">
+                        <CustomField
+                            control={form.control}
+                            name="prompt"
+                            formLabel={
+                                type === 'remove' ? "Object to remove" :
+                                    "Object to recolor"
+                            }
+                            render={({ field }) => (
+                                <Input
 
+                                />)}
+                        />
+                    </div>)}
             </form>
         </Form>
     )
+
+
 }
 
 export default TransformationForm
