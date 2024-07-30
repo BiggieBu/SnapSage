@@ -1,5 +1,5 @@
 "use client"
-import { useState, useTransition } from "react"
+import { useEffect, useState, useTransition } from "react"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -162,7 +162,7 @@ const TransformationForm = ({ data = null, action, userId, type, creditBalance, 
         }, 1000);
         return onChangeField(value);
     };
-    ///TODO:Update credit fee to be something else
+
     const onTransformHandler = async () => {
         setIsTransforming(true);
 
@@ -177,7 +177,12 @@ const TransformationForm = ({ data = null, action, userId, type, creditBalance, 
             await updateCredits(userId, creditFee);
         })
     }
+    useEffect(() => {
+        if (image && (type == 'restore' || type == 'removeBackground')) {
+            setNewTransformation(transformationType.config)
+        }
 
+    }, [image, transformationType.config, type])
 
     return (
         <Form {...form}>
