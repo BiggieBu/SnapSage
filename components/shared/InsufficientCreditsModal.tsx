@@ -44,7 +44,7 @@ export const InsufficientCreditsModal = () => {
                         height={122}
                     />
 
-                    <AlertDialogTitle className="p-24-bold text-dark-600">
+                    <AlertDialogTitle className="p-24-bold text-stone-700">
                         Oops.... Looks like you&#39;ve run out of free credits!
                     </AlertDialogTitle>
 
@@ -61,7 +61,7 @@ export const InsufficientCreditsModal = () => {
                         No, Cancel
                     </AlertDialogCancel>
                     <AlertDialogAction
-                        className="button w-full bg-purple-gradient  bg-cover"
+                        className="button w-full bg-brown-gradient  bg-cover"
                         onClick={() => router.push("/credits")}
                     >
                         Yes, Proceed

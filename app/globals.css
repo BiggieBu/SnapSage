@@ -95,7 +95,7 @@
   }
 
   .gradient-text {
-    @apply bg-yellow-600 bg-gradient-to-tr bg-cover bg-clip-text text-transparent;
+    @apply bg-brown-gradient bg-cover bg-clip-text text-transparent;
   }
 
   /* ===== ALIGNMENTS */
@@ -175,11 +175,11 @@
   }
 
   .dropdown-item {
-    @apply p-16-semibold text-dark-700 cursor-pointer transition-all px-4 py-3 rounded-none outline-none hover:border-none focus-visible:ring-transparent hover:text-white hover:bg-purple-gradient hover:bg-cover focus-visible:ring-offset-0 focus-visible:outline-none !important;
+    @apply p-16-semibold text-dark-700 cursor-pointer transition-all px-4 py-3 rounded-none outline-none hover:border-none focus-visible:ring-transparent hover:text-white hover:bg-brown-gradient hover:bg-cover focus-visible:ring-offset-0 focus-visible:outline-none !important;
   }
 
   .input-field {
-    @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-stone-700 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
+    @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-gray-100/15 text-stone-700 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
   }
 
   .search-field {
@@ -187,11 +187,11 @@
   }
 
   .submit-button {
-    @apply bg-gradient-to-tr bg-yellow-600 bg-cover rounded-full py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
+    @apply bg-brown-gradient bg-cover rounded-full py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
   }
 
   .select-field {
-    @apply w-full border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 rounded-[16px] h-[50px] md:h-[54px] text-stone-700 p-16-semibold disabled:opacity-100 placeholder:text-dark-400/50 px-4 py-3 focus:ring-offset-0 focus-visible:ring-transparent focus:ring-transparent focus-visible:ring-0 focus-visible:outline-none !important;
+    @apply w-full border-2 border-purple-200/20 shadow-sm shadow-gray-100/15 rounded-[16px] h-[50px] md:h-[54px] text-stone-700 p-16-semibold disabled:opacity-100 placeholder:text-dark-400/50 px-4 py-3 focus:ring-offset-0 focus-visible:ring-transparent focus:ring-transparent focus-visible:ring-0 focus-visible:outline-none !important;
   }
 
   .select-trigger {
@@ -233,11 +233,11 @@
   }
 
   .credits-item {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-8 shadow-xl shadow-purple-200/20 lg:max-w-none;
+    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-8 shadow-xl shadow-gray-100/20 lg:max-w-none;
   }
 
   .credits-btn {
-    @apply w-full rounded-full bg-purple-100 bg-cover text-purple-500 hover:text-purple-500;
+    @apply w-full rounded-full bg-purple-100 bg-cover text-yellow-500 hover:text-yellow-500;
   }
 
   /* Profile Page */
@@ -246,11 +246,11 @@
   }
 
   .profile-balance {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-gray-100/10 md:px-6 md:py-8;
   }
 
   .profile-image-manipulation {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-gray-100/10 md:px-6 md:py-8;
   }
 
   /* Transformation Details */
@@ -276,11 +276,11 @@
   }
 
   .collection-btn {
-    @apply button w-32 bg-purple-gradient bg-cover text-white;
+    @apply button w-32 bg-brown-gradient bg-cover text-white;
   }
 
   .collection-card {
-    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[16px] border-2 border-purple-200/15 bg-white p-4 shadow-xl shadow-purple-200/10 transition-all hover:shadow-purple-200/20;
+    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[16px] border-2 border-purple-200/15 bg-white p-4 shadow-xl shadow-gray-100/10 transition-all hover:shadow-gray-100/20;
   }
 
   /* MediaUploader Component */
@@ -293,7 +293,7 @@
   }
 
   .media-uploader_cta-image {
-    @apply rounded-[16px] bg-white  p-5 shadow-sm shadow-purple-200/50;
+    @apply rounded-[16px] bg-white  p-5 shadow-sm shadow-gray-100/50;
   }
 
   /* Navbar Component */
@@ -307,12 +307,12 @@
 
   /* Search Component */
   .search {
-    @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-white px-4 shadow-sm shadow-purple-200/15 md:max-w-96;
+    @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-white px-4 shadow-sm shadow-gray-100/15 md:max-w-96;
   }
 
   /* Sidebar Component */
   .sidebar {
-    @apply hidden h-screen w-72 bg-white p-5 shadow-md shadow-yellow-200/50 lg:flex;
+    @apply hidden h-screen w-72 bg-white p-5 shadow-md shadow-gray-900 lg:flex;
   }
 
   .sidebar-logo {

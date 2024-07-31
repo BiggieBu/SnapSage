@@ -21,7 +21,7 @@ const Sidebar = () => {
                             {navLinks.slice(0, 6).map((link) => {
                                 const isActive = link.route === pathname;
                                 return (
-                                    <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-gradient-to-tr bg-yellow-600 text-white' : 'text-gray-700'}`}>
+                                    <li key={link.route} className={`sidebar-nav_element group ${isActive ? 'bg-brown-gradient text-white' : 'text-gray-700'}`}>
                                         <Link className="sidebar-link" href={link.route}>
                                             <Image
                                                 src={link.icon}

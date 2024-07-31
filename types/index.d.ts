@@ -137,3 +137,10 @@ declare type TransformedImageProps = {
     hasDownload?: boolean;
     setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
+declare type QueryType = {
+    author: string;
+    publicId?: {
+        $in: string[];
+    };
+};

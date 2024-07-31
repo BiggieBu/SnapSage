@@ -23,11 +23,11 @@ export const Collection = ({
     hasSearch = false,
     images,
     totalPages = 1,
-    page,
+    page = 1,
 }: {
     images: IImage[];
     totalPages?: number;
-    page: number;
+    page?: number;
     hasSearch?: boolean;
 }) => {
     const router = useRouter();
@@ -49,7 +49,7 @@ export const Collection = ({
     return (
         <>
             <div className="collection-heading">
-                <h2 className="h2-bold text-dark-600">Recent Edits</h2>
+                <h2 className="h2-bold text-stone-700">Recent Edits</h2>
                 {hasSearch && <Search />}
             </div>
 
@@ -81,7 +81,7 @@ export const Collection = ({
                         </p>
 
                         <Button
-                            className="button w-32 bg-purple-gradient bg-cover text-white"
+                            className="button w-32 bg-brown-gradient bg-cover text-white"
                             onClick={() => onPageChange("next")}
                             disabled={Number(page) >= totalPages}
                         >
@@ -109,10 +109,10 @@ const Card = ({ image }: { image: IImage }) => {
                     sizes="(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 33vw"
                 />
                 <div className="flex-between">
-                    <p className="p-20-semibold mr-3 line-clamp-1 text-dark-600">
+                    <p className="p-20-semibold mr-3 line-clamp-1 text-stone-700">
                         {image.title}
                     </p>
-                    <Image
+                    {image.transformationType && (<Image
                         src={`/assets/icons/${transformationTypes[
                             image.transformationType as TransformationTypeKey
                         ].icon
@@ -120,7 +120,7 @@ const Card = ({ image }: { image: IImage }) => {
                         alt={image.title}
                         width={24}
                         height={24}
-                    />
+                    />)}
                 </div>
             </Link>
         </li>

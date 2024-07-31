@@ -1,14 +1,24 @@
 import { Collection } from "@/components/shared/Collection"
+import { Button } from "@/components/ui/button"
 import { navLinks } from "@/constants"
-import { getAllImages } from "@/lib/actions/image.actions"
+import { getUserImages } from "@/lib/actions/image.actions"
+import { getUserById } from "@/lib/actions/user.actions"
+import { SignedIn, SignedOut } from "@clerk/nextjs"
+import { auth } from "@clerk/nextjs/server"
 import Image from "next/image"
 import Link from "next/link"
+import { redirect } from "next/navigation"
 
 const Home = async ({ searchParams }: SearchParamProps) => {
-  const page = Number(searchParams?.page) || 1;
   const searchQuery = (searchParams?.query as string) || '';
-
-  const images = await getAllImages({ page, searchQuery })
+  let page = Number(searchParams?.page) || 1;
+  const clerkId = auth().userId;
+  let userId = null;
+  if (clerkId) {
+    userId = await getUserById(clerkId);
+    page = 1;
+  }
+  const images = await getUserImages({ searchQuery, userId, page })
   return (
     <>
       <section className="home">
@@ -31,14 +41,30 @@ const Home = async ({ searchParams }: SearchParamProps) => {
         </ul>
       </section>
 
-      <section className="sm:mt-12">
+      <SignedIn>
+        <section className="sm:mt-12">
+          <Collection
+            images={images?.data}
+            totalPages={images?.totalPages}
+          />
+          {images?.totalPages && images?.totalPages > 1 && (
+            <Button
+              type="button"
+              className="submit-button capitalize"
+              onClick={() => { redirect('/profile') }}
+            />
+          )
+          }
+        </section>
+      </SignedIn>
+      <SignedOut>
         <Collection
           hasSearch={true}
           images={images?.data}
           totalPages={images?.totalPages}
           page={page}
         />
-      </section>
+      </SignedOut>
     </>
   )
 }

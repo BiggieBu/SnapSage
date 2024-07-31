@@ -66,10 +66,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        IBMPlex: ["var(--font-ibm-plex)"],
+        Kadwa: ["var(--font-kadwa)"],
       },
       backgroundImage: {
-        "purple-gradient": "url('/assets/images/gradient-bg.svg')",
+        "brown-gradient": "url('/assets/images/gradient-bg.svg')",
         banner: "url('/assets/images/banner-bg.png')",
       },
       borderRadius: {

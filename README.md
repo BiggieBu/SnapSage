@@ -1,66 +1,33 @@
+# Snap Sage : AI Image Wizard
 
-# Differences from the source
+This is a web service that utilizes the Cloudinary API to perform various image transformations using AI algorithms. With this service, you can easily modify images by applying generative fill, background removal, object removal, recoloring, and much more.
 
-## Already made
+## Features
 
-### index.d.ts
+- Generative Fill: Automatically fill in missing or damaged areas of an image using AI algorithms.
+- Background Removal: Effortlessly remove the background from an image, leaving only the main subject.
+- Object Removal: Easily remove unwanted objects or people from an image.
+- Recoloring: Change the colors of specific objects or the entire image.
+- And much more: Explore the full range of AI-powered image transformations available through this web service.
 
-I changed the types of firstname and lastname in CreateUserParams and UpdateUserParams from string to string|null.
+## How to Use
 
-### .env.local
+1. Sign up for an account on the web service.
+2. Choose the desired transformation from the available options.
+3. Upload the image you want to transform.
+4. Customize the transformation parameters if needed.
+5. Submit the transformation request.
+6. Wait for the transformed image to be processed.
+7. Download the transformed image.
 
-Modified NEXT_PUBLIC_AFTER_SIGN_IN_URL to NEXT_PUBLIC_SIGN_IN_FORCE_REDIRECT_URL
+## Security
 
-### (NODE MODULE CHANGE)mongoose->types->document.d.ts(this unfortunately would not reflect on deployment so gotta correct it)
+This web service is secured by Clerk, a robust authentication and authorization platform. Your data and images are protected using industry-standard security measures.
 
-default value of type _id was modified from unknown to any
+## Contributing
 
-## PROBLEMS
+Contributions to this project are welcome! If you have any ideas, bug reports, or feature requests, please submit them through the issue tracker.
 
-### toasts
+## License
 
-1 credit deducted toast should pop up when 1 credit is actually deducted, i.e., after the transformation and not after the upload
-
-### form
-
-save image should be disabled until title is added in the restore form
-
-### mongoose document _id type default unknown
-
-deployment won't work on vercel
-The node module changes won't be useful for actual deployment
-
-#### Solved
-
-I changed `Document` to `Document<any>` in image.model.ts.
-
-### home
-
-Complete breach of privacy by displaying everybody's images on the front page lmao
-this is fucked up
-the hero page should be accessible without logging in
-when signed in it should only show user's image
-when signed out it should show images from sample folder
-
-### search
-
-needs to be improved
-
-### transformations
-
-they are saved in our db but still when viewed in transformations/[id]/page.tsx, they are reapplied by using TransformedImage which is fucked up
-
-Even when downloading getCldImageUrl again reapplies transformation.
-
-### update
-
-transformation is instantly applied as I change the aspect ratio
-clicking on apply transformation keeps the spinner loading
-
-### solved
-
-newTransformation is also passed to the transformed image and only when it is null will the transformed image be evaluated
-
-### transformations/[id]
-
-/[id] should only be authorized to the author of the image
+This project is licensed under the [MIT License](link-to-license).
