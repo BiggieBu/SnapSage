@@ -113,13 +113,9 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
         if (searchQuery) {
             expression += ` AND ${searchQuery}*`
         }
-
-        console.log("Searching for:", expression)
         const { resources } = await cloudinary.search
             .expression(expression)
             .execute();
-
-        console.log("Resources found", resources);
         const resourceIds = resources.map((resource: any) => resource.public_id);
 
         let query = {};
@@ -138,8 +134,6 @@ export async function getAllImages({ limit = 9, page = 1, searchQuery = '' }: {
             .sort({ updatedAt: -1 })
             .skip(skipAmount)
             .limit(limit);
-
-        console.log("images")
 
         const totalImages = await Image.find(query).countDocuments();
         const savedImages = await Image.find().countDocuments();

@@ -27,7 +27,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { aspectRatioOptions, creditFee, defaultValues, transformationTypes } from "@/constants"
 import { CustomField } from "./CustomField"
-import { AspectRatioKey, debounce, deepMergeObjects } from "@/lib/utils"
+import { AspectRatioKey, debounce, deepMergeObjects, handleError } from "@/lib/utils"
 import MediaUploader from "./MediaUploader"
 import TransformedImage from "./TransformedImage"
 import { updateCredits } from "@/lib/actions/user.actions"
@@ -103,14 +103,13 @@ const TransformationForm = ({ data = null, action, userId, type, creditBalance, 
                         userId,
                         path: '/'
                     })
-                    console.log(newImage);
                     if (newImage) {
                         form.reset();
                         setImage(data);
                         router.push(`/transformations/${newImage._id}`);
                     }
                 } catch (error) {
-                    console.log(error);
+                    handleError(error);
                 }
             }
             if (action === "Update") {
@@ -127,7 +126,7 @@ const TransformationForm = ({ data = null, action, userId, type, creditBalance, 
                         router.push(`/transformations/${updatedImage._id}`);
                     }
                 } catch (error) {
-                    console.log(error);
+                    handleError(error);
                 }
             }
         }
