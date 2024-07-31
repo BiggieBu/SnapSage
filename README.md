@@ -40,4 +40,27 @@ Complete breach of privacy by displaying everybody's images on the front page lm
 this is fucked up
 the hero page should be accessible without logging in
 when signed in it should only show user's image
-when signed out it should show set of sample images
+when signed out it should show images from sample folder
+
+### search
+
+needs to be improved
+
+### transformations
+
+they are saved in our db but still when viewed in transformations/[id]/page.tsx, they are reapplied by using TransformedImage which is fucked up
+
+Even when downloading getCldImageUrl again reapplies transformation.
+
+### update
+
+transformation is instantly applied as I change the aspect ratio
+clicking on apply transformation keeps the spinner loading
+
+### solved
+
+newTransformation is also passed to the transformed image and only when it is null will the transformed image be evaluated
+
+### transformations/[id]
+
+/[id] should only be authorized to the author of the image
